@@ -25,7 +25,7 @@ export default function FeatureTabs({ features, activeFeature, onSelectFeature }
           display: flex;
           flex-direction: column;
           justify-content: center;
-          gap: 1rem;
+          gap: 0.5rem; /* Tighter gap */
           background-color: rgba(255, 255, 255, 0.05);
           padding: 0.5rem;
           border-radius: 1rem;
@@ -34,15 +34,15 @@ export default function FeatureTabs({ features, activeFeature, onSelectFeature }
         }
 
         .tab-btn {
-          padding: 0.5rem 1rem; /* Smaller on mobile */
-          border-radius: 0.75rem;
-          font-size: 0.8rem; /* Smaller text on mobile */
+          padding: 0.4rem 0.75rem; /* Very compact */
+          border-radius: 0.6rem;
+          font-size: 0.75rem; /* XS text */
           font-weight: 500;
           transition: all 300ms;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 0.5rem;
+          gap: 0.4rem;
           cursor: pointer;
           border: 1px solid transparent; /* Reserve space for border */
         }
