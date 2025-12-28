@@ -466,24 +466,65 @@ export default function StudentClickerDemo() {
         }
 
         @media (max-width: 768px) {
+          .demo-content {
+            flex-direction: column;
+            padding: 1rem 0.5rem;
+            justify-content: flex-start;
+            gap: 1rem;
+            overflow-y: auto;
+          }
+
+          .board-ui {
+            width: 100%;
+            padding: 1rem;
+            gap: 1rem;
+            border-radius: 1rem;
+          }
+
+          /* Force Horizontal/Grid layout for board on mobile */
           .board-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; /* Stacked, but contents compact */
+            gap: 1rem;
           }
+
+          .header-row { padding-bottom: 0; }
+          .logo-icon { width: 16px; height: 16px; }
+
+          /* Compact Question Card */
+          .question-card, .student-list-card {
+            padding: 0.75rem;
+          }
+          h3 { font-size: 1rem; margin-bottom: 0.75rem; }
+
+          /* KEEP OPTIONS HORIZONTAL (2x2 Grid) */
           .options-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr; 
+            gap: 0.5rem;
           }
+          .option-btn {
+            padding: 0.6rem;
+            font-size: 0.9rem;
+            border-radius: 8px;
+          }
+          .opt-letter { font-size: 0.8rem; }
+
+          /* Remote: Way smaller under it */
           .remote-wrapper {
             position: relative;
-            bottom: 0;
-            right: 0;
-            transform: none;
-            margin: 2rem auto 0;
-            display: block;
+            transform: scale(0.55); /* SUPER SMALL */
+            transform-origin: top center;
+            margin: -0.5rem auto -80px; /* Pull up tight */
+            right: auto;
+            bottom: auto;
           }
-          .demo-content {
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
+          
+          /* Tighten board font */
+          .board-ui {
+             padding: 0.75rem;
+          }
+          .option-btn {
+             padding: 0.5rem;
+             font-size: 0.85rem;
           }
         }
       `}</style>

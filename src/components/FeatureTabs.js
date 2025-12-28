@@ -23,55 +23,71 @@ export default function FeatureTabs({ features, activeFeature, onSelectFeature }
       <style jsx>{`
         .tabs-container {
           display: flex;
-          flex-direction: column;
-          justify-content: center;
-          gap: 0.5rem; /* Tighter gap */
-          background-color: rgba(255, 255, 255, 0.05);
-          padding: 0.5rem;
-          border-radius: 1rem;
-          backdrop-filter: blur(4px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          flex-direction: row; /* Horizontal */
+          width: 100%; /* Full width */
+          gap: 0.25rem; /* Tiny gap */
+          background-color: transparent;
+          padding: 0;
+          border: none;
         }
 
         .tab-btn {
-          padding: 0.4rem 0.75rem; /* Very compact */
-          border-radius: 0.6rem;
-          font-size: 0.75rem; /* XS text */
-          font-weight: 500;
-          transition: all 300ms;
+          flex: 1; /* Force equal width to FIT ALL */
+          padding: 0.5rem 0.25rem;
+          border-radius: 8px; /* Slightly squarer for space */
+          font-size: 0.7rem; /* Small text to fit */
+          line-height: 1.1;
+          font-weight: 600;
+          transition: all 200ms;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 0.4rem;
+          gap: 0.25rem;
           cursor: pointer;
-          border: 1px solid transparent; /* Reserve space for border */
+          background: rgba(255, 255, 255, 0.8);
+          border: 1px solid rgba(0,0,0,0.1);
+          color: #334155;
+          text-align: center;
+          white-space: normal; /* Allow wrap/multiline if needed */
         }
 
         .active {
-          background-color: #2563eb; /* blue-600 */
+          background-color: #2563eb;
           border-color: #2563eb;
           color: white;
-          box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.25);
-          transform: scale(1.02);
+          box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
         }
 
         .inactive {
-          color: #0f172a; /* Dark text for visibility */
-          border-color: #000000; /* Black border as requested */
-          background-color: rgba(255, 255, 255, 0.5);
-        }
-        .inactive:hover {
-          background-color: rgba(0, 0, 0, 0.05);
+          background: white;
+          color: #475569;
         }
 
         @media (min-width: 768px) {
           .tabs-container {
             flex-direction: row;
+            justify-content: center;
+            background-color: white; /* Clean white bg */
+            padding: 0.5rem;
+            border-radius: 99px;
+            border: 1px solid #e2e8f0; /* Visible container border */
           }
-          /* Restore larger sizes for desktop */
           .tab-btn {
-             padding: 0.75rem 1.5rem;
-             font-size: 0.875rem;
+            border-radius: 99px;
+            background: transparent;
+            border: 1px solid #cbd5e1; /* RESTORED BORDER */
+            color: #64748b;
+            padding: 0.6rem 1.2rem;
+          }
+          .active {
+             background-color: #2563eb;
+             color: white;
+             border-color: #2563eb;
+          }
+          .inactive:hover {
+            color: #1e293b;
+            background-color: #f1f5f9;
+            border-color: #94a3b8;
           }
         }
       `}</style>

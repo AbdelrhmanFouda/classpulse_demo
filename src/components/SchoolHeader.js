@@ -153,11 +153,16 @@ export default function SchoolHeader() {
         }
 
         @media (max-width: 768px) {
-          h1 { font-size: 2.2rem; }
-          .cta-group { flex-direction: column; width: 100%; }
-          .btn-primary, .btn-secondary { width: 100%; }
-          .benefits-list { flex-direction: column; align-items: center; width: 100%; }
-          .benefit-item { width: 100%; justify-content: center; }
+          h1 { font-size: 1.25rem !important; margin-bottom: 0.75rem; } /* Half size */
+          p { font-size: 0.9rem; line-height: 1.4; margin-bottom: 1.5rem; }
+          .badge { font-size: 0.65rem; padding: 4px 8px; margin-bottom: 1rem; }
+          .school-header { margin-bottom: 1.5rem; }
+          
+          .cta-group { flex-direction: column; width: 100%; gap: 0.5rem; margin-bottom: 1.5rem; }
+          .btn-primary, .btn-secondary { width: 100%; padding: 0.75rem 1rem; font-size: 0.9rem; }
+          
+          .benefits-list { display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: 0.5rem; }
+          .benefit-item { width: auto; justify-content: start; font-size: 0.75rem; padding: 0.5rem; }
         }
       `}</style>
     </div>
