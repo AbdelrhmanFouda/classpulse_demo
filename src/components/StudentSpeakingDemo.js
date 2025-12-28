@@ -790,17 +790,21 @@ export default function StudentSpeakingDemo() {
           .layout-grid {
             grid-template-columns: 1fr;
             height: auto;
-            gap: 3rem;
+            gap: 2rem; /* Reduced gap */
             padding-bottom: 4rem;
           }
           .col-left {
             display: flex;
-            order: -1; /* Show board first */
+            order: -1; 
           }
           .phone-frame {
             width: 100%;
-            max-width: 320px;
+            max-width: 280px; /* Smaller phone width */
             margin: 0 auto;
+          }
+           /* Tweak internal phone padding if needed */
+          .screen {
+            padding: 10px !important;
           }
         }
       `}</style>

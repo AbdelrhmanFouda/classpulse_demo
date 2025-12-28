@@ -34,9 +34,9 @@ export default function FeatureTabs({ features, activeFeature, onSelectFeature }
         }
 
         .tab-btn {
-          padding: 0.75rem 1.5rem;
+          padding: 0.5rem 1rem; /* Smaller on mobile */
           border-radius: 0.75rem;
-          font-size: 0.875rem;
+          font-size: 0.8rem; /* Smaller text on mobile */
           font-weight: 500;
           transition: all 300ms;
           display: flex;
@@ -67,6 +67,11 @@ export default function FeatureTabs({ features, activeFeature, onSelectFeature }
         @media (min-width: 768px) {
           .tabs-container {
             flex-direction: row;
+          }
+          /* Restore larger sizes for desktop */
+          .tab-btn {
+             padding: 0.75rem 1.5rem;
+             font-size: 0.875rem;
           }
         }
       `}</style>
